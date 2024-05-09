@@ -135,7 +135,6 @@ def cancel_irn_request(inv,data):
             frappe.db.set_value('Sales Invoice',inv,'irn_cancelled',1)
             return success_response()
         response_logger(response['request'],response['response'],"CANCEL IRN","Sales Invoice",inv,response_status)
-        frappe.db.commit()
         return response_error_handling(response)
     except Exception as e:
         frappe.logger('cleartax').exception(e)
@@ -160,6 +159,6 @@ def irn_bulk_processing(**kwargs):
 @frappe.whitelist()
 def bulk_irn(**kwargs):
     try:
-        frappe.enqueue("gst_india.cleartax_integration.API.irn.irn_bulk_processing",**{'data':kwargs.get('data')})
+        frappe.enqueue("cleartax_integration.API.irn.irn_bulk_processing",**{'data':kwargs.get('data')})
     except Exception as e:
         frappe.logger('sfa_online').exception(e)

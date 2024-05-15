@@ -156,6 +156,7 @@
         "fieldname": "gst_invoice",
         "fieldtype": "Check",
         "label": "GST Invoice",
+        "no_copy": 1,
         "insert_after": "gst_invoicing"
     },
     {

@@ -1,6 +1,13 @@
 {
     "Delivery Note": [
      {
+      "fieldname": "import_supplier",
+      "fieldtype": "Check",
+      "label": "import supplier",
+      "hidden": 1,
+      "read_only": 1
+     },
+     {
       "fieldname": "eway_bill",
       "fieldtype": "Section Break",
       "label": "Eway Bill",

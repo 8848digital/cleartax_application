@@ -51,12 +51,12 @@ def ewb_failed():
 
 def sales_gst_job(data):
     for i in data:
-        frappe.enqueue("gst_india.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'SALE'})
+        frappe.enqueue("cleartax_integration.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'SALE'})
         # create_gst_invoice(**{'invoice':i.name,'type':'SALE'})
 
 def purchase_gst_job(data):
     for i in data:
-        frappe.enqueue("gst_india.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'PURCHASE'})
+        frappe.enqueue("cleartax_integration.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'PURCHASE'})
         # create_gst_invoice(**{'invoice':i.name,'type':'PURCHASE'})
 
 
@@ -107,11 +107,11 @@ def push_to_gst(**kwargs):
     if kwargs.get('sales_invoice'):
         sales_invoices = frappe.get_all('Sales Invoice',filters= [["posting_date","<=",kwargs.get('sales_invoice')],["gst_invoice",'=',0]])
         for i in sales_invoices:
-            frappe.enqueue("gst_india.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'SALE'})
+            frappe.enqueue("cleartax_integration.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'SALE'})
     if kwargs.get('purchase_invoice'):
         purchase_invoices = frappe.get_all('Purchase Invoice',filters= [["posting_date","<=",kwargs.get('purchase_invoice')],["gst_invoice",'=',0]])
         for i in purchase_invoices:
-            frappe.enqueue("gst_india.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'PURCHASE'})
+            frappe.enqueue("cleartax_integration.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'PURCHASE'})
 
 @frappe.whitelist()
 def push_to_cleartax_scheduler():
@@ -126,11 +126,11 @@ def push_to_cleartax_scheduler():
         pi_list=frappe.db.get_all("Purchase Invoice",filters={"gst_invoice":0,"posting_date":['<=', doc.purchase_invoices_from]},fields=["name"])
     if si_list:
         for i in si_list:
-            frappe.enqueue("gst_india.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'SALE'})
+            frappe.enqueue("cleartax_integration.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'SALE'})
             # create_gst_invoice(**{'invoice':i.name,'type':'SALE'})
     if pi_list:
         for i in pi_list:
-            frappe.enqueue("gst_india.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'PURCHASE'})
+            frappe.enqueue("cleartax_integration.cleartax_integration.API.gst.create_gst_invoice",**{'invoice':i.name,'type':'PURCHASE'})
             # create_gst_invoice(**{'invoice':i.name,'type':'PURCHASE'})
 
 

@@ -4,6 +4,8 @@ import frappe
 from frappe.utils import flt
 import secrets
 import string
+
+
 def sales_invoice_submit(doc, method=None):
     if frappe.db.get_single_value('Cleartax Settings','automate'):
         if e_invoicing_enabled(company=doc.company):

@@ -452,14 +452,14 @@ def bulk_ewb_dn_processing(**kwargs):
 @frappe.whitelist()
 def bulk_ewb(**kwargs):
     try:
-        frappe.enqueue("gst_india.cleartax_integration.API.ewb.bulk_ewb_processing",**{'data':kwargs.get('data')})
+        frappe.enqueue("cleartax_integration.cleartax_integration.API.ewb.bulk_ewb_processing",**{'data':kwargs.get('data')})
     except Exception as e:
         frappe.logger('sfa_online').exception(e)
 
 @frappe.whitelist()
 def bulk_ewb_dn(**kwargs):
     try:
-        frappe.enqueue("gst_india.cleartax_integration.API.ewb.bulk_ewb_dn_processing",**{'data':kwargs.get('data')})
+        frappe.enqueue("cleartax_integration.cleartax_integration.API.ewb.bulk_ewb_dn_processing",**{'data':kwargs.get('data')})
     except Exception as e:
         frappe.logger('sfa_online').exception(e)
 

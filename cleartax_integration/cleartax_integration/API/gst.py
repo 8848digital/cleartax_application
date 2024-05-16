@@ -190,7 +190,7 @@ def bulk_gst_processing(**kwargs):
 @frappe.whitelist()
 def bulk_purchase_gst(**kwargs):
     try:
-        frappe.enqueue("gst_india.cleartax_integration.API.gst.bulk_gst_processing",**{'data':kwargs.get('data')})
+        frappe.enqueue("cleartax_integration.cleartax_integration.API.gst.bulk_gst_processing",**{'data':kwargs.get('data')})
     except Exception as e:
         frappe.logger('sfa_online').exception(e)
 
@@ -209,6 +209,6 @@ def bulk_gst_processing_sales(**kwargs):
 @frappe.whitelist()
 def bulk_sales_gst(**kwargs):
     try:
-        frappe.enqueue("gst_india.cleartax_integration.API.gst.bulk_gst_processing_sales",**{'data':kwargs.get('data')})
+        frappe.enqueue("cleartax_integration.cleartax_integration.API.gst.bulk_gst_processing_sales",**{'data':kwargs.get('data')})
     except Exception as e:
         frappe.logger('sfa_online').exception(e)

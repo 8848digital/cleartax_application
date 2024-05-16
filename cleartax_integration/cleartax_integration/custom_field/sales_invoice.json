@@ -1,8 +1,8 @@
 {
     "Sales Invoice": [
-        {
-            "fieldname": "taxes_and_charges_added",
-            "fieldtype": "Data",
+    {
+        "fieldname": "taxes_and_charges_added",
+        "fieldtype": "Data",
         "label": "Taxes and Charges Added"
     },
     {
@@ -160,11 +160,18 @@
         "insert_after": "gst_invoicing"
     },
     {
+        "fieldname": "cdn",
+        "fieldtype": "Check",
+        "label": "CDN",
+        "no_copy": 1,
+        "insert_after": "gst_invoice"
+    },
+    {
         "fieldname": "custom_export_details",
         "fieldtype": "Section Break",
         "label": "Export Details",
         "collapsible": 1,
-        "insert_after":"gst_invoice"
+        "insert_after":"cdn"
     },
     {
         "fieldname": "custom_export_type",

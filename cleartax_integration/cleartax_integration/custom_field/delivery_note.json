@@ -1,0 +1,50 @@
+{
+    "Delivery Note": [
+     {
+      "fieldname": "eway_bill",
+      "fieldtype": "Section Break",
+      "label": "Eway Bill",
+      "collapsible": 1,
+      "insert_after": "sales_team"
+     },
+     {
+      "fieldname": "ewaybill",
+      "fieldtype": "Data",
+      "label": "Ewaybill",
+      "depends_on": "eval:(doc.docstatus === 1)",
+      "translatable": 1,
+      "insert_after": "eway_bill"
+     },
+     {
+      "fieldname": "eway_bill_cancelled",
+      "fieldtype": "Check",
+      "label": "Eway Bill Cancelled",
+      "insert_after": "ewaybill"
+     },
+     {
+      "fieldname": "ewb_valid_till",
+      "fieldtype": "Datetime",
+      "label": "Ewb Valid Till",
+      "insert_after": "eway_bill_cancelled"
+     },
+     {
+      "fieldname": "ewb_date",
+      "fieldtype": "Datetime",
+      "label": "Ewb Date",
+      "insert_after": "ewb_valid_till"
+     },
+     {
+      "fieldname": "ewb_trans_id",
+      "fieldtype": "Data",
+      "label": "Ewb Trans Id",
+      "translatable": 1,
+      "insert_after": "ewb_date"
+     },
+     {
+      "fieldname": "update_partb",
+      "fieldtype": "Check",
+      "label": "Update Partb",
+      "insert_after": "ewb_trans_id"
+     }
+    ]
+}

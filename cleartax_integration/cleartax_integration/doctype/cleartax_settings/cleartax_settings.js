@@ -5,7 +5,7 @@ frappe.ui.form.on('Cleartax Settings', {
 	refresh: function(frm) {
 		cur_frm.add_custom_button(__("PUSH TO CLEARTAX"), function () {
 			frappe.call({
-				method: "gst_india.cleartax_integration.doctype.cleartax_settings.cleartax_settings.push_to_cleartax",
+				method: "cleartax_integration.cleartax_integration.doctype.cleartax_settings.cleartax_settings.push_to_cleartax",
 				args: {
 					purchase_invoice: frm.selected_doc.purchase_invoices_from,
 					sales_invoice: frm.selected_doc.sales_invoices_from

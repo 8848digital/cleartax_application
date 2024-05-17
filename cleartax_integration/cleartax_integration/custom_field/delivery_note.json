@@ -52,6 +52,18 @@
       "fieldtype": "Check",
       "label": "Update Partb",
       "insert_after": "ewb_trans_id"
+     },
+     {
+      "fieldname": "custom_non_gst",
+      "fieldtype": "Check",
+      "label": "Non GST",
+      "read_only": 1,
+      "nocopy": 1
+     },
+     {
+      "fieldname": "internal_delivery_note",
+      "fieldtype": "Check",
+      "label": "Internal Delivery Note"
      }
     ]
 }

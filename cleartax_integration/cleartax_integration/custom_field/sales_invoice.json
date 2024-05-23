@@ -116,6 +116,7 @@
         "fieldname": "eway_bill",
         "fieldtype": "Section Break",
         "label": "EWay Bill",
+        "collapsible": 1,
         "insert_after": "irn_cancelled"
     },
     {

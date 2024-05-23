@@ -37,13 +37,15 @@ def response_error_handling(response):
     elif response.get('errorDetails'):
         errors.append(response.get('errorDetails'))
     elif response.get('errors') and response.get('errors').get('errors'):
-            errors = response.get('errors').get('errors') 
+            errors = response.get('errors').get('errors')
     else:
         errors.append({'error_message':json.dumps(response)})
     c=1
-    for i in errors:
-        error += str(c) + ". " + i.get("error_message") + "\r\n"
-        c+=1 
+    print("errors " , errors)
+    if errors:
+        for i in errors:
+            error += str(c) + ". " + i.get("error_message") + "\r\n"
+            c+=1 
     return error_response(error)
 
 

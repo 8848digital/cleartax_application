@@ -7,6 +7,7 @@ app_license = "MIT"
 required_apps = ["frappe/erpnext/india_compliance"]
 
 after_migrate = "cleartax_integration.migrate.after_migrate"
+after_uninstall = "cleartax_integration.migrate.after_uninstall"
 # Includes in <head>
 # ------------------
 

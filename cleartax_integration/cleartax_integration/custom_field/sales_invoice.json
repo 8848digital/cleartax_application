@@ -1,10 +1,21 @@
 {
     "Sales Invoice": [
-    {
-        "fieldname": "taxes_and_charges_added",
-        "fieldtype": "Data",
-        "label": "Taxes and Charges Added"
-    },
+        {
+            "fieldname": "taxes_and_charges_added",
+            "fieldtype": "Data",
+            "label": "Taxes and Charges Added",
+            "insert_after": "status"
+        },
+        {
+            "fieldname": "is_nil_exempt",
+            "fetch_from": "item_code.is_nil_exempt",
+            "fieldtype": "Check",
+            "is_system_generated": 1,
+            "label": "Is Nil Rated or Exempted",
+            "print_hide": 1,
+            "hidden":1,
+            "insert_after": "taxes_and_charges_added"
+        },
     {
         "fieldname": "custom_group_id",
         "fieldtype": "Data",
@@ -37,15 +48,6 @@
         "label": "Import Supplier",
         "hidden": 1,
         "insert_after": "more_info_tab"
-    },
-    {
-        "fieldname": "is_nil_exempt",
-        "fetch_from": "item_code.is_nil_exempt",
-        "fieldtype": "Check",
-        "is_system_generated": 1,
-        "label": "Is Nil Rated or Exempted",
-        "print_hide": 1,
-        "hidden":1
     },
     {
         "fieldname": "e_invoicing",
@@ -114,6 +116,7 @@
         "fieldname": "eway_bill",
         "fieldtype": "Section Break",
         "label": "EWay Bill",
+        "collapsible": 1,
         "insert_after": "irn_cancelled"
     },
     {

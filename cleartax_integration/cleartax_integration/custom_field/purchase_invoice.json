@@ -12,6 +12,23 @@
       "module": "Accounts"
      },
      {
+      "fieldname": "gst_col_break",
+      "fieldtype": "Column Break",
+      "insert_after": "eligibility_for_itc"
+     },
+     {
+        "fieldname": "gst_import_supplier_gst_details_section",
+        "fieldtype": "Section Break",
+        "insert_after": "itc_cess_amount"
+       },
+       {
+          "fieldname": "gst_import_supplier_gst_details",
+          "fieldtype": "Table",
+          "insert_after": "gst_import_supplier_gst_details_section",
+          "label": "GST Import Supplier GST Details",
+          "options": "GST Import Supplier"
+      },
+     {
       "fieldname": "is_non_gst",
       "fieldtype": "Check",
       "insert_after": "eligibility_for_itc",
@@ -23,22 +40,10 @@
       "module": "Stock"
      },
      {
-        "fieldname": "gst_import_supplier_gst_details_section",
-        "fieldtype": "Section Break",
-        "insert_after": "itc_cess_amount"
-       },
-     {
         "fieldname": "import_supplier",
         "fieldtype": "Check",
         "label": "Import Supplier",
         "insert_after": "is_return"
-    },
-     {
-        "fieldname": "gst_import_supplier_gst_details",
-        "fieldtype": "Table",
-        "insert_after": "gst_import_supplier_gst_details_section",
-        "label": "GST Import Supplier GST Details",
-        "options": "GST Import Supplier"
     },
      {
         "fieldname": "supplier_pan",

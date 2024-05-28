@@ -84,7 +84,8 @@
      {
         "fieldname": "gst_invoice",
         "fieldtype": "Check",
-        "label": "GST Invoice"
+        "label": "GST Invoice",
+        "no_copy": 1
     },
      {
         "fieldname": "custom_non_gst",

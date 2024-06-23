@@ -4,7 +4,7 @@ app_publisher = "8848 Digital LLP"
 app_description = "Cleartax Integration"
 app_email = "contact@8848digital.com"
 app_license = "MIT"
-required_apps = ["india_compliance"]
+required_apps = ["frappe/india_compliance"]
 
 after_migrate = "cleartax_integration.migrate.after_migrate"
 after_uninstall = "cleartax_integration.migrate.after_uninstall"
